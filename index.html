@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://malsup.github.io/jquery.form.js"></script> 
+
+    <title>Blog Post</title>
+</head>
+<body>
+<div class="app">
+    <h2>Publish on my blog </h2>
+    <div class="head">
+        <div class="buttons">
+            <button id="signup">sign up</button>
+            <button id="login"> log in</button>
+            <button id="logout">log out</button>
+            <button id="addmessage">add message</button>
+            <button id="uploadpic">upload picture</button>
+        </div>
+        <div class="personal">
+            <div class="userpict">
+              
+            <img src="" width="40" height="40" alt="portrait">
+            </div>
+            <h5 id="logedin"></h5>
+        </div>
+    </div>
+    <div class="adduser">
+        <label for="name">
+            name
+            <input type="text" name="name" id="name">
+        </label>
+        <label for="email">
+            email
+            <input type="email" name="email" id="email">
+        </label>
+        <label for="password">
+            pasword 
+            <input type="password" name="passw" id="passw">
+        </label>
+        <button type="submit" id="btnSignup">submit</button>
+    </div>
+    <div class="loginuser">
+        <label for="logemail">
+            email
+            <input type="email" name="logemail" id="logemail">
+        </label>
+        <label for="loginPassw">
+            pasword
+            <input type="password" name="loginPassw" id="loginPassw">
+        </label>
+        <button type="submit" id="btnlogin">submit</button>
+    </div>
+    <div class="messagepost" >
+            <label for="title">title</label>
+            <input type="text" name="title" id="title"></label>
+            <label for="mesg">message </label>
+            <textarea name="mesg" id="mesg"></textarea>
+            <button type="submit" id="msgbtn" style="width: 60px; margin: 10px;">submit</button>
+    </div>
+    <div class="uploadprofiles">
+        <form class="uploadImage"  action="http://localhost:3000/picture" method="post" enctype="multipart/form-data" method="post">
+            <input type="file" name="profileimg"  id="profileimg" />
+            <input type="submit" value="upload img" class="uploadbtn">
+        </form>    
+    </div>
+    <h3>about energy</h3>
+    <div class="pictures">
+        <div class="pic">
+            <img src="picture/ligthonwall.jpg" width="600" height="400" alt="">
+        </div>
+        <div class="pic">
+            <img src="picture/renewableenergy.jpg" width="600" height="400" alt="">
+        </div>
+    </div>
+
+   <div class="users"></div>
+    <div class="messageslist"></div> 
+   
+</div>  
+</body>
+</html>
