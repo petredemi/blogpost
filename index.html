@@ -18,41 +18,48 @@
             <button id="signup">sign up</button>
             <button id="login"> log in</button>
             <button id="logout">log out</button>
-            <button id="addmessage">add message</button>
-            <button id="uploadpic">upload picture</button>
+            <button id="addmessage">add post</button>
+            <button id="uploadpic">profile picture</button>
         </div>
+
         <div class="personal">
             <div class="userpict">
-              
-            <img src="" width="40" height="40" alt="portrait">
             </div>
             <h5 id="logedin"></h5>
         </div>
     </div>
     <div class="adduser">
-        <label for="name">
+        <label for="name" class="label">
             name
             <input type="text" name="name" id="name">
         </label>
-        <label for="email">
+        <label for="email" class="label">
             email
             <input type="email" name="email" id="email">
         </label>
-        <label for="password">
+        <label for="password" class="label">
             pasword 
             <input type="password" name="passw" id="passw">
+        </label>
+        <label for="profession" class="label">
+            profession 
+            <input type="text" name="profession" id="profession">
+        </label>
+        <label for="authorreq">
+            do you want to becomme be author
+            <input type="checkbox" name="authorreq" id="authorreq" value="yes">
         </label>
         <button type="submit" id="btnSignup">submit</button>
     </div>
     <div class="loginuser">
-        <label for="logemail">
-            email
+        <li>
+            <label for="logemail">email </label>
             <input type="email" name="logemail" id="logemail">
-        </label>
-        <label for="loginPassw">
-            pasword
+        </li>
+        <li>
+            <label for="loginPassw">pasword </label>
             <input type="password" name="loginPassw" id="loginPassw">
-        </label>
+        </li>
         <button type="submit" id="btnlogin">submit</button>
     </div>
     <div class="messagepost" >
@@ -77,10 +84,23 @@
             <img src="picture/renewableenergy.jpg" width="600" height="400" alt="">
         </div>
     </div>
-
-   <div class="users"></div>
+    <div class="requestsform">
+            <div class="usersstatus">
+                <h4 style="margin: 5px;"> Blog authors and members</h4>
+            </div>
+    </div>
+    <div class="allusers">
+            <div class="users"></div>
+    </div>
     <div class="messageslist"></div> 
    
 </div>  
 </body>
 </html>
+
+<!--
+<label for="authorrequested">
+                    request blog
+    <input type="checkbox" name="authorreqted" id="memr${data[i].id}" value="${data[i].requestauth}">
+</label>
+-->
