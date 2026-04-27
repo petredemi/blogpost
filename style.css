@@ -1,6 +1,6 @@
 body{
     background:linear-gradientb(90deg, rgb(22, 7, 54) 80%, rgba(244, 234, 252, 0.746));
-    font-size: large;
+    font-size: 20px;
     padding: 1pxx;
     margin: 1pxx;
     display: flex;
@@ -33,6 +33,9 @@ li{
 }
 .buttons > button{
     margin: 2px;
+}
+button{
+    margin: 5px;
 }
 .app{
     width: 100%;
