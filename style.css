@@ -1,17 +1,29 @@
 body{
-    background-color: rgb(227, 224, 224);
+    background:linear-gradientb(90deg, rgb(22, 7, 54) 80%, rgba(244, 234, 252, 0.746));
     font-size: large;
     padding: 1pxx;
     margin: 1pxx;
     display: flex;
     justify-content: center;
 }
+h2{
+    color: rgb(10, 10, 56);
+}
+
 h3{
     margin: 2px;
 }
 li{
     list-style: none;
-    margin: 4px;
+    margin: 5px;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items:end;
+    background: linear-gradient(20deg, rgb(15, 5, 36) 50%, rgba(45, 59, 59, 0.638) );
+    padding-top: 10px;
+    min-height: 110px;
 }
 .buttons{
     height: 1.8rem;
@@ -29,19 +41,25 @@ li{
     padding: 1px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
 }
 .personal{
     text-align: end;
     margin-right: 20px;
+    min-height: 77px;
 }
 .personal > h5{
     margin: 2px;
 }
+.userpict{
+     font-size: 0.9rem;
+}
+#logedin{
+    color: rgb(249, 30, 30);
+    font-size: 1.2rem;
+}
+
 .personal >.userpict > img{
-    max-width: 80px;
-    max-height: fit-content;
-    min-width: 70px;
-    min-height: 70px;
     width: 70px;
     height: 70px;
     object-fit: cover;
@@ -49,35 +67,29 @@ li{
     padding: 2px;
     border: 1px solid blue;
     background-color:antiquewhite;
-    margin-right: 20pxx;
-}
-.userpict{
-     border-radius: 50%;
-     width: 80px;
-     height: 80px;
-     background-color:beige;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     
+    margin-right: 1px;
 }
 .adduser{
     display: none;
     flex-direction: column;
-    position: absolute;
-    background-color: azure;
-    z-index: 1;
+    position: relative;
     font-size: 0.9rem;
-    padding: 5px;
 }
-.adduser > label{
+.form{
+    max-width: 390px;
+    position: absolute;
+    z-index: 1;
+    background-color: aliceblue;
+    padding: 10px;
+}
+.adduser label{
     display:flex;
     justify-content: space-between;
     margin: 3px;
     margin-right: 10px;
     margin-left: 10px;
 }
-.adduser >label> #name, #email, #passw, #profession{
+.adduser >.form > label>#name, #email, #passw, #profession{
     width: 250px;
     margin-left: 10px;
 }
@@ -93,17 +105,16 @@ li{
 }
 .uploadprofiles{
     display: none;
-    position: absolute;
-    margin-top: 1px;
-    background-color: rgb(163, 233, 213);
+    position: relative;
+    z-index: 1;
 }
+
 .uploadprofiles >form{
+    position: absolute;
+    background-color:rgb(217, 215, 211);
+    padding: 10px;
+    top: 0;
     margin-top: 1px;
-}
-.head{
-    display: flex;
-    justify-content: space-between;
-    align-items:baseline;
 }
 #addmessage{
     display: none;
@@ -113,23 +124,24 @@ li{
     z-index: 0;
     flex-wrap: wrap;
     justify-content: center;
-    margin: auto;
-    background-color: bisque;
+    background-color: rgb(20, 71, 32);
 }
 .pic{
     position: relative;
     margin: 8px;
+    max-width: 170px;
 }
+
 .pictures >.pic > img{
-    max-width: 100%;
+    max-width: 150px;
     height: auto;
-    border: 2px solid red;
+    box-shadow: 2px -2px 20px lightskyblue;
     object-fit: cover;
 }
 .requestsform{
-    background-color: rgb(191, 138, 240);
     position: relative;
     z-index: 2;
+    background-color: rgb(12, 12, 42);
 }
 .usersstatus{
     max-width: 500px;
@@ -143,58 +155,54 @@ li{
     background-color: rgb(253, 251, 249);
 }
 .usersstatus > form{
-    background-color: rgb(215, 250, 238);
     margin: 4px;
     display: flex;
     justify-content:center;
     align-items: center;
     font-size: 0.9rem;
+    background-color: rgba(250, 198, 55, 0.674);
 }
 .usersstatus > form > label{
-    background-color: aquamarine;
     margin-left: 10px;
 }
 .usersstatus .membername{
     width: 200px;
 }
 .allusers{
-    background-color: aquass;
+    background-color:seagreen;
 }
 .users{
     resize: both;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-template-rows: repeat(2, 2fr);
-    border: 1px solid black;
-    gap: 4px;
-    overflow: auto;
-    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1px;
     margin: auto;
-    background-color: aquamarine;
-    max-width: 500px;
-}
-.users > div{
-    margin: 5px;
-    border-bottom: 2px solid darkblue;
+    max-width: 700px;
 }
 .user{
-    border: 1px solid red;
+    border: 1px solid black;
+    box-shadow: 1px 2px 8px black;
     display: flex;
-    max-width: 140px;
-    max-height: 210px;
+    width: 140px;
+    height: 210px;
     justify-content: space-between;
     flex-direction: column;
     margin: 10px;
-    background-color: rgba(131, 234, 207, 0.526);
+    padding: 5px;
+    background-color: rgba(3, 72, 54, 0.719);
     font-size: 0.8rem;
 }
 .user >h4{
     margin-top: 2px;
     margin-bottom: 1px;
+    color: rgb(240, 233, 234);
+    text-shadow: 1px 1px 1px black;
 }
 .user> p{
     margin-top: 1px;
     margin-bottom: 1px;
+    color: rgb(238, 238, 246);
+    text-shadow: 1px 1px 1px black;
 }
 .deluser, #btnSignup, .submrequest{
     width: 60px;
@@ -204,12 +212,20 @@ li{
     margin: 4px;
     text-align: end;
 }
+.deluser{
+    display: none;
+}
 .user >img{
-    max-width: 120px;
-    max-height: 120px;
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 25px;
     object-fit: cover;
+    box-shadow: 2px 2px 20px lightgreen;
+    padding: 2px;
+    border-radius: 50%;
 
 }
+
 .usernameemail{
     display: flex;
 }
@@ -218,28 +234,24 @@ li{
 }
 .loginuser{
     display: none;
-    position: absolute;
-    background-color: rgb(240, 246, 255);
+    position: relative;
     flex-wrap: wrap;
-    max-width: 300px;
-    z-index: 1;
     flex-direction: column;
-    padding: 5px;
 }
-.loginuser > li {
+.loginuser li {
     display: flex;
     justify-content: space-between;
     font-size: 0.9rem;
-
+    margin: 5px;
 }
-.loginuser > li> label{
+.loginuser label{
     margin-right: 20px;
 }
 .messageslist{
-    background-color: blueviolet;
     position: relativee;
     width: 100%;
     margin: autox;
+    background: radial-gradient(white, deepskyblue );
 }
 .messages{
     border: 1px solid black;
@@ -250,38 +262,43 @@ li{
     margin: 1px;
     max-width: 400px;
     padding: 10px;
-    background-color: rgb(225, 151, 211);
+    background-color: rgb(230, 162, 217);
 }
 .postid{
-    background-color: aqua;
+    background-color:deepskyblue;
     z-index: 2;
 }
 .messagepost{
-    border: 1px solid black;
-    position: absolute;
-    padding: 10px;
-    background-color: rgb(155, 226, 242);
+    position: relative;
     display: none;
-    min-width: 380pxx;
+    min-width: 380px;
     flex-direction: column;
-    max-width: 500px;
-    margin-top: 20pxx;
-    z-index: 2;
 }
+.messagepost >.form{
+    display: flex;
+    flex-direction: column;
+    min-width: 380px;
+    background: linear-gradient(30deg, grey, white, grey, white);
+    border-radius: 20px;
+}
+
 textarea{
     min-height: 100px;
-    background-color: rgb(118, 166, 167);
+    background-color: rgb(232, 236, 236);
     margin: none;
     border: none;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 10px;
 }
 .post{
     max-width: 600px;
-    min-height: 200px;
     font-size: 0.9rem;
     position: relative;
-    background-color: cadetblue;
+    background-color:darkcyan;
+    box-shadow: 2px 2px 10px darkblue;
     padding: 5px;
     margin: auto;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -289,6 +306,7 @@ textarea{
 }
 .postcontent p{
     width: auto;
+    height: fit-content;
     margin: 1px;
     text-align: justify;
     padding: 2px;
@@ -296,17 +314,31 @@ textarea{
 .postcontent{
     padding: 5px;
     max-width: auto;
+    min-height:200px;
 }
 .postcontent >img{
     float: left;
     margin: 10px;
-    max-width: 250px;
+    max-width: 300px;
+    max-height: 250px;
 }
-.post >h5{
+.authdate{
+    display: flex;
+    justify-content: space-between;
+}
+.post h5{
     text-align: end;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    margin-top: 1px;
     margin-right: 10px;
 }
+.pdate{
+    text-align: end;
+    margin: 5px;
+    margin-top: 0px;
+    font-size: 0.8rem;
+}
+
 .uploadPicPost{
     display: none;
     max-width: 600px;
@@ -324,6 +356,9 @@ textarea{
     justify-content: end;
     flex-wrap: wrap;
 }
+.postbuttons > .uploadpicture, .postedit, .postdel, .delcomment{
+    display: none;
+}
 .editform{
     display: flex;
     flex-direction: column;
@@ -332,13 +367,14 @@ textarea{
     background-color: cadetblue;
     padding: 5px;
 }
+
 .commentx{
-    background-color: rgba(113, 87, 78, 0.785);
-    color: aliceblue;
+    background-color: rgba(25, 14, 46, 0.634);
     border: 1px solid black;
+    color: lightgoldenrodyellow;
     max-width: 400px;
     margin: 5px;
-    min-width: 300px;
+    min-width: 340px;
     border-radius: 10px;
     padding: 5px;
     min-height: 50px;
@@ -356,6 +392,18 @@ textarea{
     top: 100%;
     z-index: 1;
     
+}
+.commentx  h5{
+    margin: 5px;
+}
+.authanddate{
+    display: flex;
+    background-color: rgb(40, 81, 81)dd;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.msgdate{
+    font-size: 0.70rem;
 }
 .formcontainer{
     display: block;
@@ -377,8 +425,14 @@ textarea{
 #commenttext{
     background-color: white;
     padding: 5px;
+    
 
 }
+.deldiv{
+    display:flex;
+    justify-content: right;
+}
+
 .submitcom{
     width: 60px;
 }

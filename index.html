@@ -7,12 +7,11 @@
     <script src="script.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://malsup.github.io/jquery.form.js"></script> 
-
     <title>Blog Post</title>
 </head>
 <body>
 <div class="app">
-    <h2>Publish on my blog </h2>
+    <h2>Share your storys about travel wonders </h2>
     <div class="head">
         <div class="buttons">
             <button id="signup">sign up</button>
@@ -24,69 +23,82 @@
 
         <div class="personal">
             <div class="userpict">
+                
             </div>
-            <h5 id="logedin"></h5>
+            <h5 id="logedin" ></h5>
         </div>
     </div>
     <div class="adduser">
-        <label for="name" class="label">
-            name
-            <input type="text" name="name" id="name">
-        </label>
-        <label for="email" class="label">
-            email
-            <input type="email" name="email" id="email">
-        </label>
-        <label for="password" class="label">
-            pasword 
-            <input type="password" name="passw" id="passw">
-        </label>
-        <label for="profession" class="label">
-            profession 
-            <input type="text" name="profession" id="profession">
-        </label>
-        <label for="authorreq">
-            do you want to becomme be author
-            <input type="checkbox" name="authorreq" id="authorreq" value="yes">
-        </label>
-        <button type="submit" id="btnSignup">submit</button>
+        <div class="form">
+                <label for="name" class="label">
+                    name
+                    <input type="text" name="name" id="name">
+                </label>
+                <label for="email" class="label">
+                    email
+                    <input type="email" name="email" id="email">
+                </label>
+                <label for="password" class="label">
+                    pasword 
+                    <input type="password" name="passw" id="passw">
+                </label>
+                <label for="profession" class="label">
+                    profession 
+                    <input type="text" name="profession" id="profession">
+                </label>
+                <label for="authorreq">
+                    do you want to becomme be author
+                    <input type="checkbox" name="authorreq" id="authorreq" value="yes">
+                </label>
+                <button type="submit" id="btnSignup">submit</button>
+        </div>
     </div>
     <div class="loginuser">
-        <li>
-            <label for="logemail">email </label>
-            <input type="email" name="logemail" id="logemail">
-        </li>
-        <li>
-            <label for="loginPassw">pasword </label>
-            <input type="password" name="loginPassw" id="loginPassw">
-        </li>
-        <button type="submit" id="btnlogin">submit</button>
+        <div class="form">
+            <li>
+                <label for="logemail">email </label>
+                <input type="email" name="logemail" id="logemail">
+            </li>
+            <li>
+                <label for="loginPassw">pasword </label>
+                <input type="password" name="loginPassw" id="loginPassw">
+            </li>
+            <button type="submit" id="btnlogin">submit</button>
+        </div>
     </div>
     <div class="messagepost" >
+        <div class="form">
             <label for="title">title</label>
             <input type="text" name="title" id="title"></label>
-            <label for="mesg">message </label>
+            <label for="mesg"></label>
             <textarea name="mesg" id="mesg"></textarea>
             <button type="submit" id="msgbtn" style="width: 60px; margin: 10px;">submit</button>
+        </div>
     </div>
     <div class="uploadprofiles">
-        <form class="uploadImage"  action="http://localhost:3000/picture" method="post" enctype="multipart/form-data" method="post">
-            <input type="file" name="profileimg"  id="profileimg" />
+        <form class="uploadImage"  action="http://localhost:3000/picture" method="post" enctype="multipart/form-data">
+            <li style="font-size: 0.8rem;">max-size 1Mb, recomended dimension 200 x 200 px </li>
+            <input type="file" name="profileimg"  id="profileimg"/>
             <input type="submit" value="upload img" class="uploadbtn">
         </form>    
     </div>
-    <h3>about energy</h3>
+    <h3 style="background-color: rgb(22, 73, 22); margin: 0px; color: beige; padding: 20px;">travel experiences</h3>
     <div class="pictures">
         <div class="pic">
-            <img src="picture/ligthonwall.jpg" width="600" height="400" alt="">
+            <img src="picture/travelgoldengate.jpg" width="600" height="400" alt="">
         </div>
         <div class="pic">
-            <img src="picture/renewableenergy.jpg" width="600" height="400" alt="">
+            <img src="picture/travelseaandrock.jpg" width="600" height="400" alt="">
+        </div>
+        <div class="pic">
+            <img src="picture/travelgreece.jpg" width="600" height="400" alt="">
+        </div>
+        <div class="pic">
+            <img src="picture/ligthonwall.jpg" width="600" height="400" alt="">
         </div>
     </div>
     <div class="requestsform">
             <div class="usersstatus">
-                <h4 style="margin: 5px;"> Blog authors and members</h4>
             </div>
     </div>
     <div class="allusers">
