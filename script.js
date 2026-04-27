@@ -288,7 +288,7 @@ btnmsg.addEventListener('click', async() => {
                             <button class="postedit">edit</button>
                             <button class="uploadpicture">add image</button>
                             <div class="uploadPicPost">
-                                  <form id="uploadPic${textx.id}"  action="http://localhost:3000/picture/${textx.id}" method="post" enctype="multipart/form-data" method="post">
+                                  <form id="uploadPic${textx.id}"  action="https://myblog-62pt.onrender.com/picture/${textx.id}" method="post" enctype="multipart/form-data" method="post">
                                     <input type="file" name="profileimg"  id="pic${textx.id}" />
                                     <input type="submit" value="upload pic" class="uploadbtn">
                                   </form>    
@@ -442,7 +442,7 @@ async function loadPage(){
           loggeduseremail = data.authData.user.email
           blogauthorright = data.authData.user.blogauthor
           let authuser = data.authuser // authentificated user profile picture id and email
-        //  console.log(data.authData.exp)
+         console.log(iduser)
           sessionexpire = data.authData.exp
           console.log(data)
             function findName(y){
