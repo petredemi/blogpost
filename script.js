@@ -243,11 +243,10 @@ btnlogin.addEventListener('click', async() => {
    if( x.token == undefined){
       return
   }
-    //location.reload()
    localStorage.setItem("blogposttoken", x.token)
-   await getBlogNames()
-   await loadPage()
-  // location.reload()
+  // await getBlogNames()
+   //await loadPage()
+    location.reload()
 })
 
 async function postMessage(){
