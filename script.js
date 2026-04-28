@@ -46,33 +46,38 @@ $(document).ready(function(){
         let nowdateseconds = new Date().getTime() - 10
         let expire = sessionexpire + '000'
         if(Number(expire) < nowdateseconds){
-          location.reload(true)         
+          localStorage.removeItem('blogposttoken')
+          location.reload()         
            console.log('session expired'
            )
         }else{
+            $("#login").css('display', 'none')
+            $("#signup").css('display', 'none')
+            $("#addmessage").show()
+            $("#logout").show()
+            $("#uploadpic").show()
           console.log('session active')
         }
       }
     })
   })
 
- if(localStorage.getItem('blogposttoken')){ /// iduser != undefined){//
+ /*if(localStorage.getItem('blogposttoken')){ /// iduser != undefined){//
         $("#login").css('display', 'none')
         $("#signup").css('display', 'none')
         $("#addmessage").show()
         $("#logout").show()
         $("#uploadpic").show()
-   
     }
-$(document).ready(function(){
+        */
+/*$(document).ready(function(){
   if(localStorage.getItem('blogposttoken')){ /// iduser != undefined){//
         $("#login").css('display', 'none')
         $("#signup").css('display', 'none')
         $("#addmessage").show()
         $("#logout").show()
         $("#uploadpic").show()
-   
-    }
+    } */
   $("#signup").click(function(){
     $(".adduser").slideToggle("slow")
     $('#name').val('')
@@ -83,7 +88,7 @@ $(document).ready(function(){
     $(".loginuser").slideUp("slow")
     $('.messagepost').slideUp('slow')
   });
-});
+
 $(document).ready(function(){
   $("#login").click(function(){
     $(".loginuser").slideToggle("slow").css('display', 'flex');
@@ -489,11 +494,11 @@ async function loadPage(){
              $('.userpict').html(`${authUserPic(authuser)}`)
             
           if(localStorage.getItem('blogposttoken')){ /// iduser != undefined){//
-            //  $("#login").css('display', 'none')
-            //  $("#signup").css('display', 'none')
-            //  $("#addmessage").show()
-            //  $("#logout").show()
-            //  $("#uploadpic").show()
+              $("#login").css('display', 'none')
+              $("#signup").css('display', 'none')
+              $("#addmessage").show()
+              $("#logout").show()
+              $("#uploadpic").show()
               $("#logout").click(function(){
                 localStorage.removeItem('blogposttoken')
                   location.reload()
@@ -546,7 +551,9 @@ async function loadPage(){
             } `) 
             messagesadded = document.querySelectorAll('.messageslist > .post > .postcontent > .postdel')
            // $(`.${loggeduser}`).find('.uploadpicture').hide()
-           $(`#${377}`).css('background-color','deepskyblue')
+           if(loggeduseremail == 'petrudem@yahoo.com'){
+                $(`#${iduser}`).css('background-color','deepskyblue')
+            }
             getPostId()
             postIdmouseEnter()
             delCommentId()
