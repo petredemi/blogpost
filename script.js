@@ -553,10 +553,12 @@ async function loadPage(){
             } `) 
             messagesadded = document.querySelectorAll('.messageslist > .post > .postcontent > .postdel')
            // $(`.${loggeduser}`).find('.uploadpicture').hide()
+           $('.messageslist').show()
            if(loggeduseremail == 'petrudem@yahoo.com'){
                   $('.requestsform').show()
             }
                 $('#1').css('background-color', 'deepskyblue')
+                $('.messageslist').show()
         //    }
             getPostId()
             postIdmouseEnter()

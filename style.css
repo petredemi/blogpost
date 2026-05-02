@@ -4,6 +4,7 @@ body{
     justify-content: center;
     background: rgb(231, 228, 228);
     padding: 0px;
+    flex-direction: column;
 }
 h2{
     color: rgb(205, 205, 239);
@@ -27,6 +28,7 @@ li{
     align-items:end;
     padding: 10px;
     min-height: 110px;
+    background-color: rgb(41, 25, 70);
 }
 .buttons{
     height: 1.8rem;
@@ -43,9 +45,8 @@ button{
     max-width: 1000px;
     display: flex;
     flex-direction: column;
-    margin: 0px;
+    margin: auto;
     margin-bottom: 40px;
-    background: rgb(34, 11, 11);
 }
 .personal{
     text-align: end;
@@ -82,7 +83,7 @@ button{
 .form{
     max-width: 390px;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     background-color: aliceblue;
     padding: 10px;
 }
@@ -123,12 +124,12 @@ button{
 #addmessage{
     display: none;
 }
-.pictures{
+.picturess{
     display: flex;
     z-index: 0;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgb(230, 248, 234);
+    background-color: rgb(41, 176, 70);
 }
 .pic{
     position: relative;
@@ -146,7 +147,6 @@ button{
 .requestsform{
     display: none;
     position: relative;
-    z-index: 2;
     background-color: rgb(55, 43, 68);
 }
 .usersstatus{
@@ -155,7 +155,6 @@ button{
     border: 1px solid black;
     margin-top: 20px;
     margin-bottom: 20px;
-    z-index: 2;
     right: 0;
     background-color: rgb(243, 192, 114);
 }
@@ -254,6 +253,7 @@ button{
     margin-right: 20px;
 }
 .messageslist{
+    display: none;
     width: 100%;
     background: radial-gradient(white, rgb(223, 245, 233) );
     padding-bottom: 20px;
@@ -278,6 +278,7 @@ button{
     display: none;
     min-width: 380px;
     flex-direction: column;
+    z-index: 3;
 }
 .messagepost >.form{
     display: flex;
@@ -441,6 +442,30 @@ textarea{
 .submitcom{
     width: 60px;
 }
+.item{
+    display: flex;
+    margin-top: 1px;
+    height: auto;
+    max-width: 800px;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 1px;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.item img{
+    max-width: 360px;
+}
+
+footer{
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: rgb(181, 181, 185);
+    padding: 10px;
+    margin-top: 2px;
+}
+
 @media (min-width: 600px) {
   .pic {
     width: calc(50% - 80px);
