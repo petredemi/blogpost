@@ -7,10 +7,15 @@ body{
 }
 h2{
     color: rgb(205, 205, 239);
+    margin-bottom: 1px;
 
 }
 h3{
     margin: 2px;
+}
+label{
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 li{
     list-style: none;
@@ -28,11 +33,10 @@ li{
     display: flex;
     align-items:center;
 }
-.buttons > button{
-    margin: 2px;
-}
+
 button{
     margin: 5px;
+    font-size: 0.95rem;
 }
 .app{
     width: 100%c;
@@ -73,7 +77,7 @@ button{
     display: none;
     flex-direction: column;
     position: relative;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 .form{
     max-width: 390px;
@@ -85,7 +89,7 @@ button{
 .adduser label{
     display:flex;
     justify-content: space-between;
-    margin: 3px;
+    margin: 8px;
     margin-right: 10px;
     margin-left: 10px;
 }
@@ -136,13 +140,14 @@ button{
     max-width: 320px;
     margin: 10px;
     height: auto;
-    box-shadow: 2px -2px 20px rgb(22, 18, 42);
+    box-shadow: 2px -2px 20px rgb(41, 36, 63);
     object-fit: cover;
 }
 .requestsform{
+    display: none;
     position: relative;
     z-index: 2;
-    background-color: rgb(193, 193, 197);
+    background-color: rgb(55, 43, 68);
 }
 .usersstatus{
     max-width: 500px;
@@ -152,7 +157,7 @@ button{
     margin-bottom: 20px;
     z-index: 2;
     right: 0;
-    background-color: rgb(253, 251, 249);
+    background-color: rgb(243, 192, 114);
 }
 .usersstatus > form{
     margin: 4px;
@@ -167,6 +172,7 @@ button{
 }
 .usersstatus .membername{
     width: 200px;
+ 
 }
 .allusers{
     background-color:rgb(77, 154, 110);

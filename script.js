@@ -448,7 +448,7 @@ async function loadPage(){
           let authuser = data.authuser // authentificated user profile picture id and email
          console.log(iduser)
           sessionexpire = data.authData.exp
-          console.log(data)
+          
             function findName(y){
                 let us = users.find(x => x.id == y)
                  return us.name
@@ -461,7 +461,10 @@ async function loadPage(){
                  return us.profile
                 }
             function checkIfAuthor(x){
-              if(x.email == 'petrudem@yahoo.com'){return 'blog administrator'}
+              if(x.email == 'petrudem@yahoo.com'){
+         //       $(`#${x.id}`).css('background-color','deepskyblue')
+                return 'blog administrator'
+              }
               else if(x.blogauthor == false){ return 'blog follower'}
               else if(x.blogauthor == true){return 'blog author'}
             }
@@ -551,8 +554,10 @@ async function loadPage(){
             messagesadded = document.querySelectorAll('.messageslist > .post > .postcontent > .postdel')
            // $(`.${loggeduser}`).find('.uploadpicture').hide()
            if(loggeduseremail == 'petrudem@yahoo.com'){
-                $(`#${iduser}`).css('background-color','deepskyblue')
+                  $('.requestsform').show()
             }
+                $('#1').css('background-color', 'deepskyblue')
+        //    }
             getPostId()
             postIdmouseEnter()
             delCommentId()
@@ -779,7 +784,6 @@ async function getPostComments(x){
                  if(loggeduseremail =='petrudem@yahoo.com'){
                             $('.delcomment').show()
                 }
-                console.log(comx)
             }
         }
     })
@@ -843,12 +847,11 @@ async function getBlogNames(){
             "Authorization": "Bearer "+token,
         },
         success: function(data, status){
-          console.log(status + 'success sdgerfgrew')
           function check(x){
                     if(x){ return 'checked'}
                     else{ return }
                   }
-             $(".usersstatus").off('append').append(' <h4 style="margin: 5px;"> Blog authors and members</h4> ')
+          //   $(".usersstatus").off('append').append(' <h4 style="margin: 5px;"> Blog authors and members</h4> ')
             for(let i = 0; i < data.length; i++){
                   let xb = check(data[i].blogauthor)
                   let xr = check(data[i].requestauth)
@@ -862,6 +865,7 @@ async function getBlogNames(){
                     <button type='submit' class='submrequest'> submit</button>
                 </form>
                 `
+             //    $(".usersstatus").off('append').append(user)
                  $(".usersstatus").off('append').append(user)
             }
           }
