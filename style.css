@@ -114,7 +114,6 @@ button{
     position: relative;
     z-index: 1;
 }
-
 .uploadprofiles >form{
     position: absolute;
     background-color:rgb(217, 215, 211);
@@ -174,6 +173,16 @@ button{
 .usersstatus .membername{
     width: 200px;
  
+}
+.intro >h5{
+    margin: 10px;
+}
+.linktoviews{
+    font-size: 0.9rem;
+    margin: 5px;
+    margin-top: 0px;
+    text-align: end;
+    background-color: rgb(201, 249, 233);
 }
 .allusers{
     background-color:rgb(77, 154, 110);
