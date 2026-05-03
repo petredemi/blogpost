@@ -3,9 +3,11 @@ body{
     display: flex;
     justify-content: center;
     background: rgb(231, 228, 228);
-    padding: 0px;
-    margin: 0px;
     flex-direction: column;
+}
+.fferferfe{
+    border: 1px solid red;
+    margin: 3px;
 }
 h2{
     color: rgb(205, 205, 239);
@@ -39,7 +41,7 @@ li{
 
 button{
     margin: 5px;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 .app{
     width: 100%c;
@@ -148,7 +150,6 @@ button{
     display: none;
     position: relative;
     background-color: rgb(55, 43, 68);
-    max-width: 100%;
 }
 .usersstatus{
     max-width: 500px;
@@ -173,6 +174,9 @@ button{
 .usersstatus .membername{
     width: 200px;
  
+}
+.intro{
+    padding: 10px;
 }
 .intro >h5{
     margin: 10px;
@@ -266,7 +270,6 @@ button{
 }
 .messageslist{
     display: none;
-    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
     background: radial-gradient(white, rgb(223, 245, 233) );
