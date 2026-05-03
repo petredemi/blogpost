@@ -25,7 +25,6 @@ let loggeduseremail
 let au   // get post class which is author 
 let blogauthorright // true or false
 let sessionexpire
-console.log(location.href)
 //window.location.reload(false)
  function addDate(d){
                 let day = new Date(d.createdAt)
@@ -126,8 +125,6 @@ $(document).ready( function(){
         $('.uploadprofiles').slideToggle('').css('display', 'flex')
         $(".messagepost").slideUp();
    })
-
- console.log($('h3').text())
 })
 $(document).ready(function(){
   $("#btnSignup").click(function(){
@@ -446,7 +443,6 @@ async function loadPage(){
           loggeduseremail = data.authData.user.email
           blogauthorright = data.authData.user.blogauthor
           let authuser = data.authuser // authentificated user profile picture id and email
-         console.log(iduser)
           sessionexpire = data.authData.exp
           
             function findName(y){
@@ -567,7 +563,6 @@ async function loadPage(){
             mouseUp()
             hideButtons()
             getRequestId() // req status blog author or member
-               console.log(messagesadded)
             $(".user"). off('mouseover').mouseover(function () {
                 let t = $(this).attr('id')
                 tu = Number(t)
@@ -596,9 +591,6 @@ function hideButtons(){
       }else{
           $(`#${loggeduser}`).find(('.deluser')).show()
       }
-      console.log( loggeduser, au)
-      console.log(loggeduser + '' + loggeduseremail)
-   //   }
 }
 //hideButtons()
 function postIdmouseEnter(){
@@ -616,10 +608,7 @@ function mouseUp(){
                     delMessage(tx)
                   //  $(`#post${tx}`).remove()
                     console.log('dgf')
-                })      
-                console.log('rrrr')
-         
-    
+                })          
     }
 function getPostId(){
             $(".post").on('mouseover', function () {

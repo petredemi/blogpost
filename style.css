@@ -43,7 +43,8 @@ button{
     margin: 5px;
     font-size: 0.95rem;
 }
-.app{    max-width: 1000px;
+.app{    
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -157,7 +158,6 @@ button{
     border: 1px solid black;
     margin-top: 20px;
     margin-bottom: 20px;
-    right: 0;
     background-color: rgb(243, 192, 114);
 }
 .usersstatus > form{
@@ -190,7 +190,7 @@ button{
 }
 .allusers{
     background-color:rgb(77, 154, 110);
-    max-width: 100%;
+    max-width: 100%d;
 }
 .users{
     resize: both;
