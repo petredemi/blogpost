@@ -553,7 +553,7 @@ async function loadPage(){
             } `) 
             messagesadded = document.querySelectorAll('.messageslist > .post > .postcontent > .postdel')
            // $(`.${loggeduser}`).find('.uploadpicture').hide()
-           $('.messageslist').show()
+           $('.messageslist').css('display', 'flex')
            if(loggeduseremail == 'petrudem@yahoo.com'){
                   $('.requestsform').show()
             }

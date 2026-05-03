@@ -4,6 +4,7 @@ body{
     justify-content: center;
     background: rgb(231, 228, 228);
     padding: 0px;
+    margin: 0px;
     flex-direction: column;
 }
 h2{
@@ -148,6 +149,7 @@ button{
     display: none;
     position: relative;
     background-color: rgb(55, 43, 68);
+    max-width: 100%;
 }
 .usersstatus{
     max-width: 500px;
@@ -175,6 +177,7 @@ button{
 }
 .allusers{
     background-color:rgb(77, 154, 110);
+    max-width: 100%;
 }
 .users{
     resize: both;
@@ -255,7 +258,10 @@ button{
 .messageslist{
     display: none;
     width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
     background: radial-gradient(white, rgb(223, 245, 233) );
+    padding: 1px;
     padding-bottom: 20px;
 }
 .messages{
@@ -303,7 +309,7 @@ textarea{
     background-color:rgb(242, 235, 235);
     box-shadow: 2px 2px 10px darkblue;
     padding: 5px;
-    margin: auto;
+    margin: 5px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
