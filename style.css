@@ -395,7 +395,7 @@ textarea{
 .commentx{
     background-color: rgba(25, 14, 46, 0.634);
     border: 1px solid black;
-    color: lightgoldenrodyellow;
+    color: white;
     max-width: 400px;
     margin: 5px;
     min-width: 340px;

@@ -134,17 +134,14 @@ $(document).ready(function(){
 $(document).ready(function(){
      $("#logout").click(function(){
         localStorage.removeItem('blogposttoken')
-          location.reload(true)
+          location.reload()
       }); 
 });
-// $(`#post${tm}`).find('.postcomments').off('click').on('click',function(){
-//        $(`#post${tm}`).children(".comments").slideToggle('slow');
-//
-//    })   
+
 async function signUp(){
   if(namex.value == '' || email.value == ''|| passw.value == ''){return}
   if(!email.value.includes("@") ){        //email.value.includes('.')){ 
-    console.log('need an email adress')
+    console.log('need an email address')
     return
   }
     const data = {
@@ -164,21 +161,21 @@ async function signUp(){
     });
     if(response.status == 200){
         const text = await response.text();
-    return text
+       let x = JSON.parse(text)
+        if( x.token == undefined){
+                return
+          }
+        localStorage.setItem("blogposttoken", x.token)
+        await loadPage()
+        return
+     }else{
+          console.log('unloaded')
      }            
 }
 btnSignup.addEventListener('click', async() => {
-    const blogposttoken =  await signUp()
-    if( blogposttoken == undefined){return}
-    let x = JSON.parse(blogposttoken)
-    console.log(authorreq.checked)
-    //if ( x == undefined ){return}
-    localStorage.setItem("blogposttoken", x.token)
-      location.reload()
-      //  await getBlogNames()
-      //  await loadPage()
+      await signUp()
 })
-async function authorsPage(){
+async function authorsPage(){ //not used
         const token = localStorage.getItem('blogposttoken')
         const response = await fetch('https://myblog-62pt.onrender.com/user', {
         method: 'GET',
@@ -230,20 +227,24 @@ async function logIn(){
              $("#logout").show()
              $("#uploadpic").show()
           const text = await response.text();
-          return text
+          let x = JSON.parse(text)
+          if( x.token == undefined){
+                return
+              }
+          localStorage.setItem("blogposttoken", x.token)
+          if (logemail.value == 'petrudem@yahoo.com'){
+                    await getBlogNames()
+              }
+          await loadPage()
+          console.log('success')
+          return
     }else{ console.log('wrong')}
 }
 
 btnlogin.addEventListener('click', async() => {
-   const blogposttoken = await logIn()
-   let x = JSON.parse(blogposttoken)
-   if( x.token == undefined){
-      return
-  }
-   localStorage.setItem("blogposttoken", x.token)
-  // await getBlogNames()
-   //await loadPage()
-    location.reload()
+    await logIn()
+   // await loadPage()
+   // location.reload()
 })
 
 async function postMessage(){
