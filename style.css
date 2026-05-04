@@ -1,28 +1,23 @@
 body{
     font-size: 22px;
-    display: flex;
-    justify-content: center;
     background: rgb(231, 228, 228);
-    flex-direction: column;
 }
 #loader {
   position: fixed;
-  width: 90px;
-  height: 90px;
   top: 25%;
-  left: 45%;
+  left: 44%;
+  margin: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
   z-index: 8; /* Ensure it stays on top */
 }
 .spinner{
-    border: 4px solid rgb(47, 41, 41);
     display: none;
-    width: 70px;
-    height: 70px;
+    border: 4px solid rgb(52, 33, 78);
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border-left-color: rgb(238, 243, 243);
+    border-left-color: rgb(250, 62, 41);
     animation: spinner 1s ease-in-out infinite;
 }
 @keyframes spinner{
@@ -73,8 +68,6 @@ button{
 }
 .app{    
     max-width: 1000px;
-    display: flex;
-    flex-direction: column;
     margin: auto;
     margin-bottom: 40px;
 }
@@ -211,10 +204,10 @@ button{
 }
 .linktoviews{
     font-size: 0.9rem;
+    padding: 3px;
     margin: 5px;
     margin-top: 0px;
     text-align: end;
-    background-color: rgb(201, 249, 233);
 }
 .allusers{
     background-color:rgb(77, 154, 110);

@@ -79,6 +79,7 @@ $(document).ready(function(){
         $("#logout").show()
         $("#uploadpic").show()
     } */
+  // document.querySelector('.spinner').style.display = 'flex';
    function fetchPage(){
       //document.querySelector('.spinner').style.display = 'flex';
       setTimeout(() =>{
@@ -176,6 +177,7 @@ async function signUp(){
                 return
           }
         localStorage.setItem("blogposttoken", x.token)
+        document.querySelector('.spinner').style.display = 'flex';
         await loadPage()
         return
      }else{
@@ -183,7 +185,6 @@ async function signUp(){
      }            
 }
 btnSignup.addEventListener('click', async() => {
-      document.querySelector('.spinner').style.display = 'flex';
       await signUp()
 })
 async function authorsPage(){ //not used
@@ -238,6 +239,7 @@ async function logIn(){
                 return
               }
           localStorage.setItem("blogposttoken", x.token)
+          document.querySelector('.spinner').style.display = 'flex';
           if (logemail.value == 'petrudem@yahoo.com'){
                     await getBlogNames()
               }
@@ -248,11 +250,7 @@ async function logIn(){
 }
 
 btnlogin.addEventListener('click', async() => {
-    //fetchPage()
-    document.querySelector('.spinner').style.display = 'flex';
     await logIn()
-   // await loadPage()
-   // location.reload()
 })
 
 async function postMessage(){
