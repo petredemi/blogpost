@@ -60,7 +60,9 @@ $(document).ready(function(){
       }
     })
   })
-
+//window.addEventListener('load', function() {
+ // document.getElementById('loader').style.display = 'none';
+//});
  /*if(localStorage.getItem('blogposttoken')){ /// iduser != undefined){//
         $("#login").css('display', 'none')
         $("#signup").css('display', 'none')
@@ -77,6 +79,13 @@ $(document).ready(function(){
         $("#logout").show()
         $("#uploadpic").show()
     } */
+   function fetchPage(){
+      //document.querySelector('.spinner').style.display = 'flex';
+      setTimeout(() =>{
+          document.querySelector('.spinner').style.display = 'none';
+        
+          }, 5000)
+      }
   $("#signup").click(function(){
     $(".adduser").slideToggle("slow")
     $('#name').val('')
@@ -134,6 +143,7 @@ $(document).ready(function(){
 $(document).ready(function(){
      $("#logout").click(function(){
         localStorage.removeItem('blogposttoken')
+        document.querySelector('.spinner').style.display = 'none';
           location.reload()
       }); 
 });
@@ -173,6 +183,7 @@ async function signUp(){
      }            
 }
 btnSignup.addEventListener('click', async() => {
+      document.querySelector('.spinner').style.display = 'flex';
       await signUp()
 })
 async function authorsPage(){ //not used
@@ -187,12 +198,7 @@ async function authorsPage(){ //not used
       const data = JSON.parse(text)
       let userloged = data.authData
       logedin.textContent = userloged.user.name
-    //  if(userloged){
-    //      $("#login").hide()
-    //      $("#signup").hide()
-    //      $("#addmessage").show()
-    //      $("#logout").show()
-    //  } else{ return }
+  
       const authors = data.users
       authors.forEach((value) =>{
         divuser = document.createElement('div')
@@ -242,6 +248,8 @@ async function logIn(){
 }
 
 btnlogin.addEventListener('click', async() => {
+    //fetchPage()
+    document.querySelector('.spinner').style.display = 'flex';
     await logIn()
    // await loadPage()
    // location.reload()
@@ -419,6 +427,7 @@ async function updatePost(x){
         })
 }
 async function loadPage(){
+  //document.querySelector('.spinner').style.display = 'flex';
   $(document).ready(async function(){
     let token = await localStorage.getItem('blogposttoken')
     $.ajaxSetup({
@@ -437,6 +446,7 @@ async function loadPage(){
         success: async function(data, status){
         // const token = localStorage.getItem('blogposttoken')
         if(status == 'success'){
+          document.querySelector('.spinner').style.display = 'flex';
           const users = await data.users
           const posts =  await data.messages
           let iduser= data.authData.user.id  //id user logged
@@ -500,6 +510,7 @@ async function loadPage(){
               $("#uploadpic").show()
               $("#logout").click(function(){
                 localStorage.removeItem('blogposttoken')
+                document.querySelector('.spinner').style.display = 'none';
                   location.reload()
                 }); 
           } else{ return }///
@@ -572,6 +583,7 @@ async function loadPage(){
                 })                
             })
            uploadProfilePic(iduser)
+           document.querySelector('.spinner').style.display = 'none';
         }},
         error:  (error) => {
            // location.reload(true)
