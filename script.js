@@ -859,7 +859,7 @@ async function getBlogNames(){
                   let xr = check(data[i].requestauth)
                 const user = `
                  <form id="reqd${data[i].id}" class="requser" action="https://myblog-62pt.onrender.com/user/blogrequest/${data[i].id}" method="post" >
-                    <label class="membername"> ${data[i].name} : </label>
+                    <div class="membername"> ${data[i].name} : </div>
                     <label for ="memb${data[i].id}"> author </label>
                     <input type="checkbox" name="blogauthor"  id="memb${data[i].id}"  ${xb}  >
                     <label for ="memr${data[i].id}"> request </label>
