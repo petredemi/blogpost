@@ -296,6 +296,7 @@ btnmsg.addEventListener('click', async() => {
                             <button class="postedit">edit</button>
                             <button class="uploadpicture">add image</button>
                             <div class="uploadPicPost">
+                                  <div class ="picsize">max file size 2MB, recomended img size 1280 x 720 px </div>
                                   <form id="uploadPic${textx.id}"  action="https://myblog-62pt.onrender.com/picture/${textx.id}" method="post" enctype="multipart/form-data" method="post">
                                     <input type="file" name="profileimg"  id="pic${textx.id}" />
                                     <input type="submit" value="upload pic" class="uploadbtn">
@@ -538,12 +539,13 @@ async function loadPage(){
                                 <h5> Author: ${findName(post.authorId)}</h5>
                               </div>
                               <div class="postbuttons" >
-                                <button class="addcomment" id="cadd${post.id}">add comment</button>
+                                <button class="addcomment" id="cadd${post.id}">+ comment</button>
                                 <button class="postcomments">comments</button>
                                 <button class="postdel">del</button>
                                 <button class="postedit">edit</button>
-                                <button class="uploadpicture">add image</button>
+                                <button class="uploadpicture">add img</button>
                                   <div class="uploadPicPost">
+                                    <div class ="picsize">max file size 2MB, recomended  img size 1280 x 720 px </div> 
                                     <form id="uploadPic${post.id}"  action="https://myblog-62pt.onrender.com/picture/${post.id}" method="post" enctype="multipart/form-data" method="post">
                                       <input type="file" name="profileimg"  id="pic${post.id}" />
                                       <input type="submit" value="upload pic" class="uploadbtn">
@@ -596,6 +598,7 @@ function hideButtons(){
       $(`.${loggeduser}`).find('.uploadpicture').show()
       $(`.${loggeduser}`).find('.postdel').show()
       $(`.${loggeduser}`).find('.postedit').show()
+      $(`.${loggeduser}`).find('.postmessages').show()
       if(loggeduseremail =='petrudem@yahoo.com'){
           $('.deluser').show()
           $('.postdel').show()

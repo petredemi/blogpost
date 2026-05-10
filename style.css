@@ -64,7 +64,7 @@ li{
 
 button{
     margin: 5px;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 .app{    
     max-width: 1000px;
@@ -104,22 +104,23 @@ button{
     font-size: 0.95rem;
 }
 .form{
-    max-width: 390px;
+    width: 340px;
     position: absolute;
     z-index: 2;
-    background-color: aliceblue;
+    background-color: rgb(243, 234, 219);
     padding: 10px;
+    box-shadow: 1px 1px 8px black;
 }
 .adduser label{
     display:flex;
     justify-content: space-between;
     margin: 8px;
-    margin-right: 10px;
+    margin-right: 5px;
     margin-left: 10px;
 }
-.adduser >.form > label>#name, #email, #passw, #profession{
-    width: 250px;
-    margin-left: 10px;
+.adduser >.form > label>#name, #email, #passw, #profession, #logemail, #loginPassw{
+    width: 240px;
+    margin-left: 1px;
 }
 
 #signup{
@@ -198,12 +199,15 @@ button{
 }
 .intro{
     padding: 10px;
+    line-height: 1.4;
 }
 .intro >h5{
     margin: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: italic;
 }
 .linktoviews{
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 3px;
     margin: 5px;
     margin-top: 0px;
@@ -337,7 +341,7 @@ textarea{
 }
 .post{
     max-width: 600px;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     position: relative;
     background-color:rgb(242, 235, 235);
     box-shadow: 2px 2px 10px darkblue;
@@ -351,15 +355,15 @@ textarea{
 }
 .postcontent p{
     width: auto;
-    height: fit-content;
+    font-size: 1rem;
+    line-height: 1.4;
     margin: 1px;
-    text-align: justify;
-    padding: 2px;
+    font-style: italic;
 }
 .postcontent{
     padding: 5px;
     max-width: auto;
-    min-height:200px;
+    min-height: 200px;
 }
 .postcontent >img{
     float: left;
@@ -381,19 +385,26 @@ textarea{
     text-align: end;
     margin: 5px;
     margin-top: 0px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .uploadPicPost{
     display: none;
     max-width: 600px;
     position: absolute;
-    margin: 10pxx;
-    margin-top: 25px;
+    box-shadow: 1px 1px 8px black;
+    margin-top: 35px;
+    font-size: 0.95rem;
     background-color: azure;
-    padding: 5px;
-    bottom: 120;
+    padding: 8px;
     right: 8;
+    z-index: 2;
+}
+.uploadPicPost > form > input{
+    font-size: 0.95rem;
+}
+.picsize{
+    margin-bottom: 10px;
 }
 .postbuttons{
     margin-bottom: 5px;
@@ -401,8 +412,10 @@ textarea{
     justify-content: end;
     flex-wrap: wrap;
 }
-.postbuttons > .uploadpicture, .postedit, .postdel, .delcomment{
+.postbuttons > .uploadpicture, .postedit, .postdel, .delcomment, .uploadpicture{
     display: none;
+    font-size: 0.95rem;
+    margin: 4px;
 }
 .editform{
     display: flex;
@@ -426,8 +439,9 @@ textarea{
 }
 .comments{
     display: none;
-    text-align: end;
     flex-direction: column;
+    font-size: 0.95rem;
+    line-height: 1.4;
     flex-wrap: wrap;
     align-items: end;
     position:absolute;
@@ -436,6 +450,7 @@ textarea{
     margin-right: 10px;
     top: 100%;
     z-index: 1;
+
     
 }
 .commentx  h5{
@@ -448,7 +463,7 @@ textarea{
     align-items: baseline;
 }
 .msgdate{
-    font-size: 0.70rem;
+    font-size: 0.80rem;
 }
 .formcontainer{
     display: block;
