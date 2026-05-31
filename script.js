@@ -456,7 +456,9 @@ async function loadPage(){
           blogauthorright = data.authData.user.blogauthor
           let authuser = data.authuser // authentificated user profile picture id and email
           sessionexpire = data.authData.exp
-          
+          if(iduser){
+            $('.articles').empty()
+          }
             function findName(y){
                 let us = users.find(x => x.id == y)
                  return us.name
@@ -509,7 +511,6 @@ async function loadPage(){
               $("#addmessage").show()
               $("#logout").show()
               $("#uploadpic").show()
-              $('.articles').empty()
               $("#logout").click(function(){
                 localStorage.removeItem('blogposttoken')
                 document.querySelector('.spinner').style.display = 'none';
