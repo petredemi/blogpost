@@ -104,7 +104,7 @@ button{
     font-size: 0.95rem;
 }
 .form{
-    width: 340px;
+    width: 370px;
     position: absolute;
     z-index: 2;
     background-color: rgb(243, 234, 219);
@@ -342,16 +342,13 @@ textarea{
 .post{
     max-width: 600px;
     font-size: 1.2rem;
-    position: relative;
+    position: relatives;
     background-color:rgb(242, 235, 235);
     box-shadow: 2px 2px 10px darkblue;
     padding: 5px;
-    margin: 5px;
+    margin: auto;
     margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: wrap;
+   
 }
 .postcontent p{
     width: auto;
@@ -359,6 +356,29 @@ textarea{
     line-height: 1.4;
     margin: 1px;
     font-style: italic;
+}
+.freearticles{
+    padding: 10px;
+}
+.articles{
+    margin: auto;
+}
+.art{
+    background-color: azure;
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+}
+.art > .authdate{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: aqua;
+}
+.art h5{
+    margin: 2px;
+    font-size: 0.9rem;
 }
 .postcontent{
     padding: 5px;
@@ -371,20 +391,20 @@ textarea{
     max-width: 300px;
     max-height: 250px;
 }
-.authdate{
+.post > .authdate{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: aqua;
 }
 .post h5{
     text-align: end;
-    margin-bottom: 5px;
-    margin-top: 1px;
-    margin-right: 10px;
+    margin: 1px;
+    font-size: 0.9rem;
 }
 .pdate{
     text-align: end;
-    margin: 5px;
-    margin-top: 0px;
     font-size: 0.9rem;
 }
 

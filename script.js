@@ -162,7 +162,7 @@ async function signUp(){
          profession: profession.value,
          authorreq: authorreq.checked
       }
-    const response = await fetch('https://myblog-62pt.onrender.com/user', {
+    const response = await fetch('http://localhost:3000/user', {
     method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -178,6 +178,7 @@ async function signUp(){
           }
         localStorage.setItem("blogposttoken", x.token)
         document.querySelector('.spinner').style.display = 'flex';
+        $('.articles').empty()
         await loadPage()
         return
      }else{
@@ -189,7 +190,7 @@ btnSignup.addEventListener('click', async() => {
 })
 async function authorsPage(){ //not used
         const token = localStorage.getItem('blogposttoken')
-        const response = await fetch('https://myblog-62pt.onrender.com/user', {
+        const response = await fetch('http://localhost:3000/user', {
         method: 'GET',
         headers: {
            'Authorization': `Bearer ${token}`,
@@ -219,7 +220,7 @@ async function logIn(){
          email: logemail.value,
          password: loginPassw.value
       }
-    const response = await fetch('https://myblog-62pt.onrender.com/log-in', {
+    const response = await fetch('http://localhost:3000/log-in', {
     method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -240,9 +241,9 @@ async function logIn(){
               }
           localStorage.setItem("blogposttoken", x.token)
           document.querySelector('.spinner').style.display = 'flex';
-          if (logemail.value == 'petrudem@yahoo.com'){
-                    await getBlogNames()
-              }
+        //  if (logemail.value == 'petrudem@yahoo.com'){
+        //            await getBlogNames()
+        //      }
           await loadPage()
           console.log('success')
           return
@@ -250,6 +251,7 @@ async function logIn(){
 }
 
 btnlogin.addEventListener('click', async() => {
+  $('.articles').empty()
     await logIn()
 })
 
@@ -259,7 +261,7 @@ async function postMessage(){
              title: title.value,
              content: content.value,
           }
-        const response = await fetch('https://myblog-62pt.onrender.com/message',{
+        const response = await fetch('http://localhost:3000/message',{
           method: 'POST',
           headers: {
             'Accept': 'application/json',
@@ -297,7 +299,7 @@ btnmsg.addEventListener('click', async() => {
                             <button class="uploadpicture">add image</button>
                             <div class="uploadPicPost">
                                   <div class ="picsize">max file size 2MB, recomended img size 1280 x 720 px </div>
-                                  <form id="uploadPic${textx.id}"  action="https://myblog-62pt.onrender.com/picture/${textx.id}" method="post" enctype="multipart/form-data" method="post">
+                                  <form id="uploadPic${textx.id}"  action="http://localhost:3000/picture/${textx.id}" method="post" enctype="multipart/form-data" method="post">
                                     <input type="file" name="profileimg"  id="pic${textx.id}" />
                                     <input type="submit" value="upload pic" class="uploadbtn">
                                   </form>    
@@ -323,7 +325,7 @@ btnmsg.addEventListener('click', async() => {
 })
 async function delUser(x){
     const token = localStorage.getItem('blogposttoken')
-    const response = await fetch(`https://myblog-62pt.onrender.com/user/${x}`, {
+    const response = await fetch(`http://localhost:3000/user/${x}`, {
     method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -349,7 +351,7 @@ async function delUser(x){
 async function delMessage(x){
     const token = localStorage.getItem('blogposttoken')
     $.ajax({
-        url: `https://myblog-62pt.onrender.com/message/${x}`, 
+        url: `http://localhost:3000/message/${x}`, 
         type: 'DELETE',
         headers: {
             //"Accept": "application/json",
@@ -368,7 +370,7 @@ async function delMessage(x){
 async function editPost(x){
     const token = localStorage.getItem('blogposttoken')
     $.ajax({
-        url: `https://myblog-62pt.onrender.com/message/${x}`, 
+        url: `http://localhost:3000/message/${x}`, 
         type: 'GET',
         headers: {
             //"Accept": "application/json",
@@ -401,7 +403,7 @@ async function updatePost(x){
     const token = localStorage.getItem('blogposttoken')
   //  let tm
     $.ajax({
-        url: `https://myblog-62pt.onrender.com/message/${x}`, 
+        url: `http://localhost:3000/message/${x}`, 
         type: 'PUT',
         headers: {
             //"Accept": "application/json",
@@ -435,7 +437,7 @@ async function loadPage(){
         }
     })
     $.ajax({
-        url: 'https://myblog-62pt.onrender.com', 
+        url: 'http://localhost:3000', 
         type: 'GET',
         headers: {
             "Accept": "application/json",
@@ -546,7 +548,7 @@ async function loadPage(){
                                 <button class="uploadpicture">add img</button>
                                   <div class="uploadPicPost">
                                     <div class ="picsize">max file size 2MB, recomended  img size 1280 x 720 px </div> 
-                                    <form id="uploadPic${post.id}"  action="https://myblog-62pt.onrender.com/picture/${post.id}" method="post" enctype="multipart/form-data" method="post">
+                                    <form id="uploadPic${post.id}"  action="http://localhost:3000/picture/${post.id}" method="post" enctype="multipart/form-data" method="post">
                                       <input type="file" name="profileimg"  id="pic${post.id}" />
                                       <input type="submit" value="upload pic" class="uploadbtn">
                                     </form>    
@@ -561,7 +563,7 @@ async function loadPage(){
             } `) 
             messagesadded = document.querySelectorAll('.messageslist > .post > .postcontent > .postdel')
            // $(`.${loggeduser}`).find('.uploadpicture').hide()
-           $('.messageslist').css('display', 'flex')
+           $('.messageslist').css('display', 'block')
            if(loggeduseremail == 'petrudem@yahoo.com'){
                   $('.requestsform').show()
             }
@@ -666,7 +668,7 @@ async function uploadPic(){ //not used
     const token = localStorage.getItem('blogposttoken')
   //  let tm
     $.ajax({
-        url: `https://myblog-62pt.onrender.com/picture`, 
+        url: `http://localhost:3000/picture`, 
         type: 'POST',
         headers: {
             "Accept": "application/json",
@@ -760,7 +762,7 @@ async function addComments(){
 async function getPostComments(x){
     const token = localStorage.getItem('blogposttoken')
     $.ajax({
-        url: `https://myblog-62pt.onrender.com/message/${x}/comments`, 
+        url: `http://localhost:3000/message/${x}/comments`, 
         type: 'GET',
         headers: {
             "Accept": "application/json",
@@ -796,7 +798,7 @@ async function getPostComments(x){
 async function delComment(x){
     const token = localStorage.getItem('blogposttoken')
     $.ajax({
-        url: `https://myblog-62pt.onrender.com/message/${tm}/comments/${x}`, 
+        url: `http://localhost:3000/message/${tm}/comments/${x}`, 
         type: 'DELETE',
         headers: {
             //"Accept": "application/json",
@@ -825,7 +827,7 @@ async function addCommentId(){
        $(`#post${tm}`).children(".comments").hide()
        $(`#formc${tm}`).children().show()
        let form = `
-          <form class='commentform' action="https://myblog-62pt.onrender.com/message/${c}/comment" method="post">
+          <form class='commentform' action="http://localhost:3000/message/${c}/comment" method="post">
             <label for= "commenttext">comment</label>
             <textarea type="text" name="commenttext" id="commenttext" rows='4' cols='40'></textarea>
             <button type='submit' class="submitcom">submit</button>
@@ -844,7 +846,7 @@ async function addCommentId(){
 async function getBlogNames(){
     const token = localStorage.getItem('blogposttoken')
     $.ajax({
-        url: "https://myblog-62pt.onrender.com/user/blogrequest", 
+        url: "http://localhost:3000/user/blogrequest", 
         type: 'GET',
         headers: {
             //"Accept": "application/json",
@@ -861,7 +863,7 @@ async function getBlogNames(){
                   let xb = check(data[i].blogauthor)
                   let xr = check(data[i].requestauth)
                 const user = `
-                 <form id="reqd${data[i].id}" class="requser" action="https://myblog-62pt.onrender.com/user/blogrequest/${data[i].id}" method="post" >
+                 <form id="reqd${data[i].id}" class="requser" action="http://localhost:3000/user/blogrequest/${data[i].id}" method="post" >
                     <div class="membername"> ${data[i].name} : </div>
                     <label for ="memb${data[i].id}"> author </label>
                     <input type="checkbox" name="blogauthor"  id="memb${data[i].id}"  ${xb}  >
@@ -911,3 +913,80 @@ async function updateRequestId(x){
                 updateRequestId(reqx)
             })
    }
+
+function getBlogArticles(){
+    $(document).ready(function(){
+            let token = localStorage.getItem('blogposttoken')
+            $.ajaxSetup({
+                  headers:{
+                    "Authorization": "Bearer " +token,
+                }
+            })
+            $.ajax({
+                url: 'http://localhost:3000/message', 
+                type: 'GET',
+                headers: {
+                    "Accept": "application/json",
+                    "contentType": "application/json",
+                 //   "Authorization": "Bearer " +token,
+                },
+                success: function(data, status){
+                // const token = localStorage.getItem('blogposttoken')
+                if(status == 'success'){
+                    const authData = data.authData
+                    const posts = data.messages
+                    let authx = data.authornames
+                    function findName(y){
+                        let us = authx.find(x => x.id == y)
+                         return us.name
+                        }
+                    function postPic(x){
+                        if (x.picture == null){
+                            return `<div></div>`
+                        }else {
+                            return `<img src = "${x.picture}" width="auto" alt = "picture">`
+                                    //x.picture 
+                        }
+                    }
+                    $('.articles'). html(`${
+                            posts.map(post => `
+                                <div class= 'art ${post.authorId}' id="post${post.id}" >
+                                    <div class= "postcontent">
+                                        ${postPic(post)}
+                                        <h4> ${post.title} </h4>
+                                        <p> ${post.content} </p>
+                                    </div>
+                                    <div class="authdate">
+                                        <div class= 'pdate'>posted on: ${addDate(post)} </div>
+                                        <h5>by: ${findName(post.authorId)}</h5>
+                                    </div>
+                                    <div class="postbuttons" >
+                                        <button class="addcomment" id="cadd${post.id}">add comment</button>
+                                        <button class="postcomments">comments</button>
+                                    </div>
+                                    <div id="formc${post.id}" class= "formcontainer"></div>
+                                    <div class="comments"></div>
+                                </div>
+                                `
+                        ).join(' ')
+                    } `)
+                
+              //      mouseOverPosts()
+                    if(loggeduser == undefined){
+                      $('.addcomment').hide()
+                    }
+                //    mouseOverAuthors(logeduser)
+                  //  delCommentId()
+                }
+            },
+                error:  (error) => {
+                    console.log(error);
+                }
+            })
+    })
+}
+console.log(loggeduser)
+console.log(loggeduseremail)
+if(loggeduser == undefined ){
+          getBlogArticles()
+}
