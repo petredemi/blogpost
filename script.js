@@ -54,6 +54,7 @@ $(document).ready(function(){
             $("#signup").css('display', 'none')
             $("#addmessage").show()
             $("#logout").show()
+            $('.articles').empty()
             $("#uploadpic").show()
           console.log('session active')
         }
