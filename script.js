@@ -46,6 +46,7 @@ $(document).ready(function(){
         let expire = sessionexpire + '000'
         if(Number(expire) < nowdateseconds){
           localStorage.removeItem('blogposttoken')
+          getBlogArticles()
           location.reload()         
            console.log('session expired'
            )
@@ -990,8 +991,8 @@ function getBlogArticles(){
 }
 console.log(loggeduser)
 console.log(loggeduseremail)
-if(loggeduser == undefined ){
-          getBlogArticles()
-}else{
-  $('.articles').empty()
-}
+//if(loggeduser == undefined ){
+//          getBlogArticles()
+//}else{
+ // $('.articles').empty()
+//}
