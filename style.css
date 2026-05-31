@@ -368,13 +368,13 @@ textarea{
     max-width: 600px;
     margin: auto;
     padding: 10px;
+    margin-bottom: 10px;
 }
 .art > .authdate{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: aqua;
 }
 .art h5{
     margin: 2px;
@@ -396,7 +396,7 @@ textarea{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: aqua;
+    margin-top: 10px;
 }
 .post h5{
     text-align: end;
@@ -531,6 +531,7 @@ textarea{
 .item img{
     max-width: 360px;
 }
+
 
 footer{
     font-size: 0.9rem;
