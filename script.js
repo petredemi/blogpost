@@ -509,6 +509,7 @@ async function loadPage(){
               $("#addmessage").show()
               $("#logout").show()
               $("#uploadpic").show()
+              $('.articles').empty()
               $("#logout").click(function(){
                 localStorage.removeItem('blogposttoken')
                 document.querySelector('.spinner').style.display = 'none';
