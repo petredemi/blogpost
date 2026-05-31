@@ -989,4 +989,6 @@ console.log(loggeduser)
 console.log(loggeduseremail)
 if(loggeduser == undefined ){
           getBlogArticles()
+}else{
+  $('.articles').empty()
 }
